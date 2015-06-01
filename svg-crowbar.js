@@ -149,6 +149,7 @@
       var styleEl = document.createElement("style")
       svg.insertBefore(styleEl, svg.firstChild);
       styleEl.setAttribute("type", "text/css");
+      styleEl.removeAttribute("xmlns");
 
 
       // removing attributes so they aren't doubled up
