@@ -146,12 +146,8 @@
 
       svg.setAttribute("version", "1.1");
 
-      var defsEl = document.createElement("defs");
-      svg.insertBefore(defsEl, svg.firstChild); //TODO   .insert("defs", ":first-child")
-      // defsEl.setAttribute("class", "svg-crowbar");
-
       var styleEl = document.createElement("style")
-      defsEl.appendChild(styleEl);
+      svg.insertBefore(styleEl, svg.firstChild);
       styleEl.setAttribute("type", "text/css");
 
 
