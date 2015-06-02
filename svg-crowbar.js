@@ -163,7 +163,7 @@
       svg.insertBefore(styleEl, svg.firstChild);
       styleEl.setAttribute("type", "text/css");
 
-      var source = (new XMLSerializer()).serializeToString(svg).replace('</style>', '<![CDATA[' + styles + ']]></style>');
+      var source = (new XMLSerializer()).serializeToString(svg).replace('<style xmlns="http://www.w3.org/1999/xhtml" type="text/css"></style>', '<style type="text/css"><![CDATA[' + styles + ']]></style>');
       var rect = svg.getBoundingClientRect();
       svgInfo.push({
         top: rect.top,
