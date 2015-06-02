@@ -146,12 +146,6 @@
 
       svg.setAttribute("version", "1.1");
 
-      var styleEl = document.createElement("style")
-      svg.insertBefore(styleEl, svg.firstChild);
-      styleEl.setAttribute("type", "text/css");
-      styleEl.removeAttribute("xmlns");
-
-
       // removing attributes so they aren't doubled up
       svg.removeAttribute("xmlns");
       svg.removeAttribute("xlink");
@@ -164,6 +158,10 @@
       if (!svg.hasAttributeNS(prefix.xmlns, "xmlns:xlink")) {
         svg.setAttributeNS(prefix.xmlns, "xmlns:xlink", prefix.xlink);
       }
+
+      var styleEl = document.createElement("style")
+      svg.insertBefore(styleEl, svg.firstChild);
+      styleEl.setAttribute("type", "text/css");
 
       var source = (new XMLSerializer()).serializeToString(svg).replace('</style>', '<![CDATA[' + styles + ']]></style>');
       var rect = svg.getBoundingClientRect();
